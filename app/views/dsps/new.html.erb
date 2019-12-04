@@ -1,0 +1,20 @@
+<%= form_for @dsp do |form| %>
+  <p>
+    <%= form.label :N %><br>
+    <%= form.text_field :N %>
+  </p>
+
+  <p>
+    <%= form.label :K %><br>
+    <%= form.text_field :K %>
+  </p>
+
+  <p>
+    <%= form.label :Phi %><br>
+    <%= form.text_field :Phi %>
+  </p>
+
+  <p>
+    <%= form.submit :Generate %>
+  </p>
+<% end %>

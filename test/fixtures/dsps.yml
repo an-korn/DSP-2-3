@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  'N': 
+  K: 
+  Phi: MyString
+
+two:
+  'N': 
+  K: 
+  Phi: MyString
