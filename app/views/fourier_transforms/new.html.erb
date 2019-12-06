@@ -1,0 +1,10 @@
+<%= form_for @fourier_transform do |form| %>
+  <p>
+    <%= form.label :N %><br>
+    <%= form.text_field :N %>
+  </p>
+
+  <p>
+    <%= form.submit :Calculate %>
+  </p>
+<% end %>

@@ -10,12 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_26_202033) do
+ActiveRecord::Schema.define(version: 2019_12_04_201041) do
 
   create_table "dsps", force: :cascade do |t|
     t.string "N"
     t.string "K"
     t.string "Phi"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "fourier_transforms", force: :cascade do |t|
+    t.string "N"
+    t.string "j"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

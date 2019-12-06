@@ -1,0 +1,2 @@
+class FourierTransform < ApplicationRecord
+end
