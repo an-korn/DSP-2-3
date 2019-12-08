@@ -19,6 +19,14 @@ class FourierTransformsController < ApplicationController
     @a_spektr_poly = fourier_transform_polyharmonic_service.a_spectr_polyharmonical
     @phase_spektr_poly = fourier_transform_polyharmonic_service.phase_spectr_polyharmonical
 
+    @fbasic = fast_harm_service.harmonic
+    @fa_spektr = fast_harm_service.a_spectr
+    @fphase_spektr = fast_harm_service.phase_spectr
+
+    @fpolyharmonic = fast_poly_service.polyharmonics
+    @fa_spektr_poly = fast_poly_service.a_spectr_polyharmonical
+    @fphase_spektr_poly = fast_poly_service.phase_spectr_polyharmonical
+
     @filter_harm = filter_service.filter_graphic
     @filter_polyharm = filter_harmonic_service.filter_graphic
   end
@@ -47,5 +55,13 @@ class FourierTransformsController < ApplicationController
 
   def filter_harmonic_service
     @filter_harmonic_service ||= FilterHarmonicData.new(fourier_transform_data.N)
+  end
+
+  def fast_harm_service
+    @fast_harm_service ||= FastHarm.new(fourier_transform_data.N)
+  end
+
+  def fast_poly_service
+    @fast_poly_service ||= FastPoly.new(fourier_transform_data.N)
   end
 end

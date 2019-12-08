@@ -6,6 +6,17 @@
 <%= column_chart @a_spektr_poly, colors: ["green"] %>
 <%= column_chart @phase_spektr_poly, colors: ["#b00"] %>
 
+<h2>Fast Fourier Transform</h2>
+<%= line_chart @fbasic %>
+<%= column_chart @fa_spektr, colors: ["green"] %>
+<%= column_chart @fphase_spektr, colors: ["#b00"] %>
+
+<%= line_chart @fpolyharmonic %>
+<%= column_chart @fa_spektr_poly, colors: ["green"] %>
+<%= column_chart @fphase_spektr_poly, colors: ["#b00"] %>
+
+<h2>Filters</h2>
+
 <%= line_chart @filter_harm %>
 
 <%= line_chart @filter_polyharm %>
