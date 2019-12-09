@@ -46,17 +46,17 @@ class FourierTransformPolyharmonicData < FourierTransformData
   end
 
   def polyharmonical_sample(i)
-    (1..M).map { |k| a_sample * Math.cos(2 * Math::PI * k * i / n - phase_sample) }.sum
+    (0..M-1).map { |k| a_sample[k] * Math.cos(2 * Math::PI * k * i / n - phase_sample[k]) }.sum
   end
 
   def polyharmonical_restored_sample(i)
-    (1..harmonics-1).map do |k|
+    (0..harmonics-1).map do |k|
       harmonic_amplitude[k] * Math.cos(2 * Math::PI * k * i / n - initial_phase[k])
     end.sum
   end
 
   def polyharmonical_restored_without_phase_sample(i)
-    (1..harmonics-1).map do |k|
+    (0..harmonics-1).map do |k|
       harmonic_amplitude[k] * Math.cos(2 * Math::PI * k * i / n)
     end.sum
   end
@@ -76,10 +76,10 @@ class FourierTransformPolyharmonicData < FourierTransformData
   end
 
   def a_sample
-    A.sample
+    @a_sample ||= (0..M-1).map { |_| A.sample }
   end
 
   def phase_sample
-    Phi.sample
+    @phase_sample ||= (0..M-1).map { |_| Phi.sample }
   end
 end

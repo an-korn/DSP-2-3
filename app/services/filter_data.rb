@@ -1,6 +1,6 @@
 class FilterData < FourierTransformPolyharmonicData
   LOW_FREQ = 3
-  HIGH_FREQ = 7
+  HIGH_FREQ = 25
 
   def filter_graphic
     [polyharmonical_graphic, band_pass_graphic, low_graphic, high_graphic]
